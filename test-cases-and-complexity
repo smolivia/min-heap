@@ -1,0 +1,51 @@
+test cases:
+min heap:
+        3
+input: insert(2)
+output:
+        2
+       /
+      3
+input: insert(1)
+output:
+        1
+       / \
+      3   2
+
+complexity analysis:
+insert, extractMin, bubbleUp, bubbleDown: O(log n)
+- bubbleUp and bubbleDown both have worst case complexity of O(log n) because they potentially have
+    to traverse all levels of the tree to find the correct placement for a given node
+- insert and extractMin both have constant time operations, but because we need to maintain the 
+    heap property, we must call bubbleUp and bubbleDown, both of which have O(log n) complexity
+
+complexity data:
+n is the size of the data input
+ticks is the number of ticks executed while running the data of the corresponding n size
+n log n was calculated using n
+c was calculated by diving the number of ticks calculated by n log n
+
+Since c is constant at around 19.2, we can see that the number of ticks is proportional the n log n
+and that the heap algorithms do indeed run in O(n log n) time
+
+n	heapsort.ticks	        n log n	            c
+150000	49451926		2579190.446	    19.17342943
+180000	60303754		3142374.729	    19.19050375
+210000	71261079		3712806.258	    19.1933201
+240000	82287003		4289441.971	    19.18361492
+270000	93446832		4871501.968	    19.18234512
+300000	104764346		5458380.893	    19.19330074
+330000	116143847		6049595.145	    19.19861482
+360000	127618792		6644749.457	    19.20595996
+390000	139146346		7243514.693	    19.20978308
+420000	150688358		7845612.517	    19.20670409
+450000	162334367		8450804.464	    19.20933891
+480000	173954939		9058883.943	    19.20268988
+510000	185661042		9669670.238	    19.20034887
+540000	197404474		10283003.94	    19.19716021
+570000	209288981		10898743.36	    19.20303782
+600000	221173029		11516761.79	    19.20444593
+630000	233166487		12136945.15	    19.21129939
+660000	245174123		12759190.29	    19.21549232
+690000	257208628		13383403.42	    19.21847679
+720000	269298078		14009498.91	    19.22253463
